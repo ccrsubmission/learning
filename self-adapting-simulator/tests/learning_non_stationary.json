@@ -1,0 +1,25 @@
+{
+    "type": "combined",
+    "parameters": {
+        "exploiter": {
+            "type": "ucb",
+            "parameters": {
+                "average": {
+                    "type": "exponential",
+                    "gamma": 0.8
+                },
+                "ksi": 2.0
+            }
+        },
+        "explorer": {
+            "type": "ucb",
+            "parameters": {
+                "average": {
+                    "type": "sliding_window",
+                    "num_steps": 10
+                },
+                "ksi": 2.0
+            }
+        }
+    }
+}

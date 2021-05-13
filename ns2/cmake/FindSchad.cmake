@@ -1,0 +1,42 @@
+FIND_PATH(SCHAD_LEARNING_INCLUDE_DIR
+        NAMES
+        schad/learning/multi_armed_bandits/ucb/ucb.h
+        )
+    
+FIND_PATH(SCHAD_COMMON_INCLUDE_DIR
+        NAMES
+        schad/packet/packet.h
+        )
+
+FIND_LIBRARY(SCHAD_LIBRARY
+        NAMES
+        schad_learning
+        )
+
+if(SCHAD_LEARNING_INCLUDE_DIR AND SCHAD_COMMON_INCLUDE_DIR)
+    SET(SCHAD_INCLUDE_DIRS ${SCHAD_LEARNING_INCLUDE_DIR} ${SCHAD_COMMON_INCLUDE_DIR})
+ENDIF()
+
+SET(SCHAD_LIBRARIES ${SCHAD_LIBRARY})
+
+IF(SCHAD_INCLUDE_DIRS)
+    MESSAGE(STATUS " Schad include dirs set to ${SCHAD_INCLUDE_DIRS}")
+ELSE()
+    MESSAGE(FATAL " Schad include dirs cannot be found")
+ENDIF()
+
+IF(SCHAD_LIBRARIES)
+    MESSAGE(STATUS " Schad library set to ${SCHAD_LIBRARIES}")
+ELSE()
+    MESSAGE(FATAL " Schad library cannot be found")
+ENDIF()
+
+IF(SCHAD_INCLUDE_DIRS AND SCHAD_LIBRARIES)
+    SET(SCHAD_FOUND "YES" )
+ENDIF(SCHAD_INCLUDE_DIRS AND SCHAD_LIBRARIES)
+
+
+MARK_AS_ADVANCED(
+        SCHAD_LIBRARIES
+        SCHAD_INCLUDE_DIRS
+)

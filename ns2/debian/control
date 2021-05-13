@@ -1,0 +1,96 @@
+Source: ns2
+Section: net
+Priority: optional
+Maintainer: Debian Network Simulators Team <pkg-netsim-devel@lists.alioth.debian.org>
+Uploaders: YunQiang Su <wzssyqa@gmail.com>
+DM-Upload-Allowed: yes
+Build-Depends: debhelper (>= 9), quilt (>= 0.46-7~), cmake, 
+     tcl-dev, tk-dev, libxext-dev, libxt-dev, xgraph, libpcap0.8-dev,
+     libotcl1-dev, tclcl, libtclcl1-dev  (>=1.20-6~), perl (>=5.003)
+Standards-Version: 3.9.3
+Vcs-git: git://git.debian.org/git/pkg-netsim/ns2.git
+Vcs-Browser: http://git.debian.org/?p=pkg-netsim/ns2.git
+Homepage: http://www.isi.edu/nsnam/ns/
+
+Package: ns2
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: gnuplot
+Description: Discrete event simulator targeted at networking research
+ Provides substantial support for simulation of TCP, routing, 
+ and multicast protocols over wired and wireless (local and satellite) 
+ networks.
+ Ns-2 is written in C++ and an Object oriented version of Tcl called OTcl.
+ . 
+ Ns began as a variant of the REAL network simulator in 1989 and has 
+ evolved substantially over the past few years. In 1995 ns development 
+ was supported by DARPA through the VINT project  at LBL, Xerox PARC, 
+ UCB, and USC/ISI. Currently ns development is support through DARPA 
+ with SAMAN  and through NSF with CONSER, both in collaboration with 
+ other researchers including ACIRI. Ns has always included substantal 
+ contributions from other researchers, including wireless code from the 
+ UCB Daedelus and CMU Monarch projects and Sun Microsystems.
+
+Package: ns2-dbg
+Architecture: any
+Priority: extra
+Section: debug
+Depends: ns2 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: debug symbols of ns2
+ Provides substantial support for simulation of TCP, routing, 
+ and multicast protocols over wired and wireless (local and satellite) 
+ networks.
+ Ns-2 is written in C++ and an Object oriented version of Tcl called OTcl.
+ . 
+ Ns began as a variant of the REAL network simulator in 1989 and has 
+ evolved substantially over the past few years. In 1995 ns development 
+ was supported by DARPA through the VINT project  at LBL, Xerox PARC, 
+ UCB, and USC/ISI. Currently ns development is support through DARPA 
+ with SAMAN  and through NSF with CONSER, both in collaboration with 
+ other researchers including ACIRI. Ns has always included substantal 
+ contributions from other researchers, including wireless code from the 
+ UCB Daedelus and CMU Monarch projects and Sun Microsystems.
+ .
+ This package contains debug symbols which can be used by gdb.
+
+Package: ns2-doc
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Section: doc
+Description: docs of ns2
+ Provides substantial support for simulation of TCP, routing, 
+ and multicast protocols over wired and wireless (local and satellite) 
+ networks.
+ Ns-2 is written in C++ and an Object oriented version of Tcl called OTcl.
+ . 
+ Ns began as a variant of the REAL network simulator in 1989 and has 
+ evolved substantially over the past few years. In 1995 ns development 
+ was supported by DARPA through the VINT project  at LBL, Xerox PARC, 
+ UCB, and USC/ISI. Currently ns development is support through DARPA 
+ with SAMAN  and through NSF with CONSER, both in collaboration with 
+ other researchers including ACIRI. Ns has always included substantal 
+ contributions from other researchers, including wireless code from the 
+ UCB Daedelus and CMU Monarch projects and Sun Microsystems.
+ .
+ This package contains docs of ns2
+
+Package: ns2-examples
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: ns2
+Description: examples of ns2
+ Provides substantial support for simulation of TCP, routing, 
+ and multicast protocols over wired and wireless (local and satellite) 
+ networks.
+ Ns-2 is written in C++ and an Object oriented version of Tcl called OTcl.
+ . 
+ Ns began as a variant of the REAL network simulator in 1989 and has 
+ evolved substantially over the past few years. In 1995 ns development 
+ was supported by DARPA through the VINT project  at LBL, Xerox PARC, 
+ UCB, and USC/ISI. Currently ns development is support through DARPA 
+ with SAMAN  and through NSF with CONSER, both in collaboration with 
+ other researchers including ACIRI. Ns has always included substantal 
+ contributions from other researchers, including wireless code from the 
+ UCB Daedelus and CMU Monarch projects and Sun Microsystems.
+ .
+ This package contains examples of ns2

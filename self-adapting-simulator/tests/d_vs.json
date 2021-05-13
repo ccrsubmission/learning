@@ -1,0 +1,41 @@
+{
+    "type": "markov",
+    "parameters": {
+        "on": {
+            "src": {
+                "type": "union",
+                "parameters": [
+                    {
+                        "type": "poisson",
+                        "parameters": {
+                            "min_value": 320,
+                            "max_value": 320,
+                            "min_work": 1,
+                            "max_work": 1,
+                            "slack" : { "min": 0.0, "max" : 0.0 },
+                            "rate": 10
+                        }
+                    },
+                    {
+                        "type": "poisson",
+                        "parameters": {
+                            "min_value": 685,
+                            "max_value": 685,
+                            "min_work": 1,
+                            "max_work": 1,
+                            "slack" : { "min": 1.0, "max": 1.0 },
+                            "rate": 0.1
+                        }
+                    }
+                ]
+            },
+            "tr": { "off": 0.99, "on": 0.01},
+	    "is_start": true
+        },
+        "off": {
+            "src" : { "type": "null" },
+            "tr": { "on": 0.3, "off": 0.7},
+            "is_start": false
+        }
+    }
+}

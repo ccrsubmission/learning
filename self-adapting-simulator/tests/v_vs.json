@@ -1,0 +1,14 @@
+{
+    "type": "poisson",
+    "parameters": {
+        "min_value": 1,
+        "max_value": 100,
+        "min_work": 1,
+        "max_work": 1,
+        "slack" : {
+            "min": 0.0,
+            "max" : 50.0
+        },
+        "rate": 5
+    }
+}

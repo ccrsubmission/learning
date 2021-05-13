@@ -1,0 +1,5 @@
+[
+    {"type": "value/slack"},
+    {"type": "value"},
+    {"type": "deadline"}
+]

@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+export DH_VERBOSE=1
+DEB_HOST_MULTIARCH ?= dpkg-architecture -qDEB_HOST_MULTIARCH
+# in doc dir ,make will be failed.
+CFLAGS += $(CPPFLAGS)
+CXXFLAGS += $(CPPFLAGS)
+
+%:
+	dh  $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --x-libraries=/usr/lib/$(DEB_HOST_MULTIARCH)
+
+override_dh_strip:
+	dh_strip --dbg-package=ns2-dbg
+
+override_dh_auto_test:
+	#it takes too long time.
+	-dh_auto_test
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGES.html
+
+override_dh_compress:
+	dh_compress -X.tcl -Xvalidate
+dfsg-orig:
+	cd ..; \
+	TAR_NAME=`ls ns2_2.*.orig.tar.gz`; \
+	tar xzf $$TAR_NAME; \
+	rm ns-2.*/indep-utils/model-gen/crl_to_pcap; \
+	rm ns-2.*/indep-utils/model-gen/output_format.pdf; \
+	rm ns-2.*/indep-utils/model-gen/trace_processing.pdf; \
+	rm ns-2.*/wpan/WPAN_ZBR_pub.pdf; \
+	chmod a-x ns-2.*/tcl/test/test-sack; \
+	tar Jcf `echo $$TAR_NAME| sed s/.orig.tar.gz/+dfsg.orig.tar.xz/g` ns-2.*/; \
+	rm -rf ns-2.*

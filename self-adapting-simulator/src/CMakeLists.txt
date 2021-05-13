@@ -1,0 +1,3 @@
+add_subdirectory(schad_common)
+add_subdirectory(schad_learning)
+add_subdirectory(schad_main)

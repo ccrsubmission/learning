@@ -1,0 +1,14 @@
+{
+    "infrastructure": {
+        "buffer_size": 50,
+        "batch_size": 50,
+        "num_simulated": 1
+    },
+    "simulation": {
+        "num_time_steps": 60000,
+        "num_runs": 100
+    },
+    "policies": "policies_vs.json",
+    "source": "source_non_stationary.json",
+    "learning": "learning_non_stationary.json"
+}

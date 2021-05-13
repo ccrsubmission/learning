@@ -1,0 +1,67 @@
+{
+    "type": "union",
+    "parameters": [
+        {
+            "type": "markov",
+            "parameters": {
+                "on": {
+                    "is_start": false,
+                    "src": { 
+                        "type": "poisson",
+                        "parameters": {
+                            "min_value": 1,
+                            "max_value": 1,
+                            "min_work": 1,
+                            "max_work": 1,
+                            "rate": 50
+                        }
+                    },
+                    "tr": {
+                        "on": 0.0,
+                        "off": 1.0
+                    }
+                },
+                "off": {
+                    "is_start": true,
+                    "src": {
+                        "type": "null"
+                    },
+                    "tr": {
+                        "on": 0.005,
+                        "off": 0.995
+                    }
+                }
+            }
+        },{
+            "type": "markov",
+            "parameters": {
+                "on": {
+                    "is_start": false,
+                    "src": { 
+                        "type": "poisson",
+                        "parameters": {
+                            "min_value": 3,
+                            "max_value": 3,
+                            "min_work": 4,
+                            "max_work": 4,
+                            "rate": 50
+                        }
+                    },
+                    "tr": {
+                        "on": 0.0,
+                        "off": 1.0
+                    }
+                },
+                "off": {
+                    "is_start": true,
+                    "src": {
+                        "type": "null"
+                    },
+                    "tr": {
+                        "on": 0.005,
+                        "off": 0.995
+                    }
+                }
+            }
+        }]
+}

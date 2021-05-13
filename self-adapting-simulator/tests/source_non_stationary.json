@@ -1,0 +1,17 @@
+{
+    "type": "sequence",
+    "parameters": [
+        {
+            "src": "v_vs.json",
+            "num_steps": 20000
+        },
+        {
+            "src" : "vs_vs.json",
+            "num_steps": 20000
+        },
+        {
+            "src": "s_vs.json",
+            "num_steps": 20000
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "type": "poisson",
+    "parameters": {
+        "min_value": 1,
+        "max_value": 4,
+        "min_work": 1,
+        "max_work": 2,
+        "rate": 1
+    }
+}

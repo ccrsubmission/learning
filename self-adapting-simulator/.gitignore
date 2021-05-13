@@ -1,0 +1,13 @@
+__pycache__/
+data/
+build/
+build_release/
+cmake-build-debug/
+cmake-build-release/
+.idea
+.clang_complete
+tags
+*.prof
+*.tr
+*.pcap
+gmon.out
